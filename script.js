@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ensure default sample category for first run (optional)
   if (categories.length === 0) {
     // exemplo inicial (remova se não quiser)
-    categories.push({ name: "TI", links: [ { _id: "l1", name: "Chamados TI", url: "https://www.jotform.com/form/240573217535657", desc: "Faça seu chamada aqui" } ] });
+    //categories.push({ name: "TI", links: [ { _id: "l1", name: "Chamados TI", url: "https://www.jotform.com/form/240573217535657", desc: "Faça seu chamada aqui" } ] });
     saveCategories();
   }
   renderAll();
@@ -359,6 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showError();
     });
 });
+
 
 
 
