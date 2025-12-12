@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Intranet CLIPSI - Template</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+  <div class="header-left">
+    <img src="/assest/ChatGPT Image 16 de out. de 2025, 08_14_48.png" alt="Hospital CLIPSI" class="site-logo">
+  </div>
+
+  <div class="header-center">
+    <h1 class="site-title">Portal Interno CLIPSI</h1>
+    <p class="site-subtitle">Central de links e recursos internos</p>
+    <p class="site-subtitle">Portal de acesso rápido CLIPSI</p>
+  </div>
+</header>
+
+
+
+    <div class="canvas">
+      <div class="content-wrap" role="main">
+        <aside class="sidebar" aria-label="categorias">
+          <h3>Categorias</h3>
+          <button class="btn" id="openAddCategoryBtn">+ Adicionar Categoria</button>
+          <hr style="margin:14px 0;border:0;border-top:1px solid #e6edf0" />
+          <div id="catsContainer"></div>
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">Dica: os dados são salvos no seu navegador.</div>
+        </aside>
+
+        <section class="main-area">
+          <div class="top-area">
+            <div class="search-row">
+              <input class="search-input" id="searchInput" placeholder="Pesquise por nome, URL ou descrição" />
+              <button class="btn-clear" id="clearBtn">Limpar dados</button>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+              <div id="currentCategoryTitle" style="font-weight:700">Todas</div>
+              <button class="btn" id="openAddLinkBtn" style="display:none">+ Adicionar Link</button>
+            </div>
+          </div>
+
+          <div class="links-list" id="linksList">
+            <div id="noLinksText">Nenhum link encontrado.</div>
+          </div>
+
+          <div class="footer-note">Template simples - personalize para integração com backend/LDAP/controle de acesso.</div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal para categoria / links (mesmo modal, mudamos o modo via JS) -->
+  <div class="modal" id="modal">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Modal">
+      <div id="modalTitle" style="font-weight:700;margin-bottom:8px">Título</div>
+
+      <!-- campos para categoria -->
+      <div id="categoryForm" style="display:none">
+        <input id="categoryName" placeholder="Nome da categoria (ex: RH)" />
+      </div>
+
+      <!-- campos para link -->
+      <div id="linkForm" style="display:none">
+        <input id="linkName" placeholder="Nome (ex: Google)" />
+        <input id="linkURL" placeholder="URL (ex: https://...)" />
+        <textarea id="linkDesc" placeholder="Descrição (opcional)" rows="3" style="width:100%;padding:8px 6px;border-radius:8px;border:1px solid #e6e9ec;margin-bottom:10px;box-sizing:border-box"></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn" id="saveBtn">Salvar</button>
+        <button class="btn-clear" id="cancelBtn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-visit">
+  <p id="visit-count">Visitantes: 0</p>
+</footer>
+
+<!-- ===== Rodapé com contador de visitas ===== -->
+<footer class="footer-visit">
+  <span id="visit-count">Visitantes: <span class="loading-text">carregando</span></span>
+</footer>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
